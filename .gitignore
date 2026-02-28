@@ -3,3 +3,6 @@ dist
 .env
 .DS_Store
 *.log
+plan.md
+FDE-Sidekick-PRD.docx
+FDE-Sidekick-PRD.txt
