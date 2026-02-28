@@ -1,0 +1,579 @@
+:root {
+  --bg: #f4f1ea;
+  --paper: #fbfaf7;
+  --ink: #161514;
+  --muted: #6e6b66;
+  --line: #d8d3c7;
+  --line-strong: #b8b0a0;
+  --accent: #1f7a4f;
+  --accent-soft: #e4f1ea;
+  --danger-bg: #fff1ef;
+  --danger-line: #e1b6ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  color: var(--ink);
+  font-family: "IBM Plex Mono", monospace;
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(circle at 12% 10%, #ffffff 0%, var(--bg) 42%);
+}
+
+button,
+textarea {
+  font-family: inherit;
+}
+
+.appShell {
+  min-height: 100vh;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.95rem;
+  position: relative;
+}
+
+.topBar {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+  padding: 1rem 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.heroCopy {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.topBar h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.heroTitle strong {
+  font-weight: 700;
+}
+
+.heroLine {
+  margin: 0;
+  max-width: 64ch;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #2d2a26;
+}
+
+.heroLineMuted {
+  color: var(--muted);
+}
+
+.topActions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.topActions .secondaryButton {
+  min-width: 112px;
+}
+
+.recordingLayout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) 1fr;
+  gap: 0.95rem;
+}
+
+.recordingHub {
+  min-height: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+}
+
+.recordHeroButton {
+  width: 100%;
+  border: 1px solid #9eb7aa;
+  background: #f2faf5;
+  min-height: 124px;
+  display: grid;
+  place-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.recordHeroButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.recordHeroDot {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #b12626;
+}
+
+.recordHeroLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recordHeroButton.recording {
+  border-color: #cb8f8f;
+  background: #fff3f3;
+}
+
+.recordHeroButton.recording .recordHeroDot {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
+
+.recordingMeta {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.recordingMetaActive {
+  color: #2c6b4d;
+}
+
+.copilotEntry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.55rem 0.6rem;
+}
+
+.setupBanner {
+  border: 1px solid #cfb98b;
+  background: #fff8e9;
+  padding: 0.5rem 0.7rem;
+}
+
+.setupBanner p {
+  margin: 0;
+  color: #584a27;
+  font-size: 0.78rem;
+}
+
+.setupBanner code {
+  background: #fff2ce;
+  border: 1px solid #cfb98b;
+  padding: 0.03rem 0.2rem;
+}
+
+.setupBannerError {
+  border-color: var(--danger-line);
+  background: var(--danger-bg);
+}
+
+.setupBannerError p {
+  color: #7e2f2f;
+}
+
+.chatPanel,
+.artifactPanel {
+  min-height: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.artifactPanel {
+  grid-template-rows: auto 1fr;
+}
+
+.artifactWorkspace {
+  min-height: 0;
+}
+
+.panelHeader {
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2b2a27;
+}
+
+.panelHeader span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.messages {
+  overflow: auto;
+  padding: 0.72rem;
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.messageBubble {
+  border: 1px solid var(--line);
+  background: #fffeff;
+  padding: 0.56rem 0.6rem;
+}
+
+.messageUser {
+  border-color: #b7d6c4;
+  background: #f4fbf7;
+}
+
+.messageRole {
+  margin: 0 0 0.26rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.messageBubble p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.46;
+  white-space: pre-wrap;
+}
+
+.liveStrip {
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  padding: 0.66rem 0.8rem;
+}
+
+.transcriptPanel {
+  min-height: 180px;
+  max-height: 38vh;
+  overflow: auto;
+}
+
+.liveStrip h3 {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #29563f;
+}
+
+.liveStrip p {
+  margin: 0.38rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.42;
+  white-space: pre-wrap;
+  color: #183d2c;
+}
+
+.liveAssist {
+  color: #2c6b4d;
+}
+
+.composer {
+  border-top: 1px solid var(--line);
+  padding: 0.72rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.composer textarea {
+  min-height: 88px;
+  resize: vertical;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.56rem;
+  line-height: 1.45;
+  border-radius: 0;
+}
+
+.composer textarea:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.composerActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.recordButton,
+.tabList button {
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: #1d1c1b;
+  padding: 0.44rem 0.68rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.recordButton:hover,
+.tabList button:hover {
+  border-color: #8f8778;
+}
+
+.primaryButton {
+  border-color: #9eb7aa;
+  background: #f2faf5;
+}
+
+.recordButton.recording {
+  border-color: #cb8f8f;
+  background: #fff4f4;
+  color: #6b2a2a;
+}
+
+.recordButton.recording::before {
+  content: "● ";
+  color: #a81a1a;
+}
+
+.primaryButton:disabled,
+.recordButton:disabled,
+.tabList button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.errorText {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--danger-bg);
+  border-top: 1px solid var(--danger-line);
+  color: #7f3434;
+  font-size: 0.76rem;
+}
+
+.inlineError {
+  border: 1px solid var(--danger-line);
+}
+
+.hintText {
+  margin: 0;
+  padding: 0.2rem 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.44;
+}
+
+.tabList {
+  display: flex;
+  gap: 0.38rem;
+}
+
+.tabList button {
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.34rem 0.5rem;
+}
+
+.activeTab {
+  border-color: #698f79 !important;
+  background: #eff9f2 !important;
+}
+
+.artifactBody {
+  margin: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.editorLabel {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.artifactEditor {
+  width: 100%;
+  min-height: 320px;
+  resize: vertical;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.65rem;
+  line-height: 1.45;
+  font-size: 0.82rem;
+}
+
+.artifactEditor:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.architectureCanvasWrap {
+  min-width: 0;
+}
+
+.artifactPreview {
+  margin: 0;
+  min-height: 380px;
+  max-height: 62vh;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.7rem;
+  line-height: 1.5;
+  font-size: 0.82rem;
+}
+
+.artifactErrorBlock p {
+  margin: 0 0 0.48rem;
+  color: #8b3b3b;
+}
+
+.artifactErrorBlock pre {
+  margin: 0;
+  border: 1px solid var(--danger-line);
+  background: var(--danger-bg);
+  padding: 0.62rem;
+  white-space: pre-wrap;
+}
+
+.mermaidCanvas {
+  background: #fff;
+}
+
+.mermaidCanvas svg {
+  width: 100%;
+  height: auto;
+}
+
+.mermaidCanvas g.node,
+.mermaidCanvas text,
+.mermaidCanvas tspan,
+.mermaidCanvas foreignObject {
+  cursor: pointer;
+}
+
+.copilotDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(430px, 92vw);
+  height: 100vh;
+  background: var(--paper);
+  border-left: 1px solid var(--line);
+  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+  z-index: 30;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.copilotDrawer.open {
+  transform: translateX(0);
+}
+
+.drawerHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.drawerCloseButton {
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: #1d1c1b;
+  padding: 0.3rem 0.54rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.drawerCloseButton:hover {
+  border-color: #8f8778;
+}
+
+@media (max-width: 980px) {
+  .appShell {
+    padding: 0.8rem;
+  }
+
+  .topBar {
+    grid-template-columns: 1fr;
+  }
+
+  .recordingLayout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .artifactEditor {
+    min-height: 260px;
+  }
+
+  .artifactPreview {
+    min-height: 260px;
+  }
+
+  .copilotDrawer {
+    width: 100vw;
+  }
+
+  .copilotEntry {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

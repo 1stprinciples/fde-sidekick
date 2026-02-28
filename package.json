@@ -1,0 +1,29 @@
+{
+  "name": "fde-sidekick",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:server\"",
+    "dev:web": "vite",
+    "dev:server": "node server/index.js",
+    "doctor": "bash ./scripts/doctor.sh",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "mermaid": "^11.12.0",
+    "multer": "^2.0.2",
+    "openai": "^4.104.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "vite": "^5.4.20"
+  }
+}
