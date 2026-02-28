@@ -4,9 +4,7 @@
 
 FDE Copilot is a voice-first planning tool built for forward deployed engineers, hackathon teams, and anyone who thinks better out loud than in a text box. Press record, talk through your idea, and watch as three artifacts — a project summary, an architecture diagram, and a prioritized task list — assemble themselves in real time.
 
-<!-- Drop your demo video in assets/demo.mp4 and uncomment:
-https://github.com/user-attachments/assets/REPLACE_WITH_VIDEO_ID
--->
+<video src="assets/demo.mp4" width="100%" autoplay loop muted></video>
 
 ## Why this exists
 
