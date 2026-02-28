@@ -1,10 +1,10 @@
-# Forward Deployed Engineer (FDE) Copilot
+# Forward Deployed Engineer (FDE) Sidekick
 
 **Turn messy brainstorms into structured plans while you speak.**
 
-FDE Copilot is a voice-first planning tool built for forward deployed engineers, hackathon teams, and anyone who thinks better out loud than in a text box. Press record, talk through your idea, and watch as three artifacts — a project summary, an architecture diagram, and a prioritized task list — assemble themselves in real time.
+FDE Sidekick is a voice-first planning tool built for forward deployed engineers, hackathon teams, and anyone who thinks better out loud than in a text box. Press record, talk through your idea, and watch as three artifacts — a project summary, an architecture diagram, and a prioritized task list — assemble themselves in real time.
 
-![FDE Copilot demo](assets/demo.gif)
+![FDE Sidekick demo](assets/demo.gif)
 
 ## Why this exists
 
@@ -17,9 +17,9 @@ Forward deployed engineers live in the gap between a customer's problem and a wo
 
 That post-conversation writeup is where momentum dies. By the time you've organized everything, the energy from the brainstorm is gone and half the context is fuzzy.
 
-FDE Copilot collapses steps 1 through 4 into a single live session. You talk, it structures. When you stop recording, the artifacts are already there — editable, exportable, and ready to share with your team or drop into a project repo.
+FDE Sidekick collapses steps 1 through 4 into a single live session. You talk, it structures. When you stop recording, the artifacts are already there — editable, exportable, and ready to share with your team or drop into a project repo.
 
-This matters because **the bottleneck in rapid prototyping isn't code — it's the planning lag between "we should build this" and "here's what we're actually building."** FDE Copilot kills that lag.
+This matters because **the bottleneck in rapid prototyping isn't code — it's the planning lag between "we should build this" and "here's what we're actually building."** FDE Sidekick kills that lag.
 
 ## How it works
 

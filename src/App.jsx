@@ -666,7 +666,7 @@ export default function App() {
       <header className="topBar">
         <div className="heroCopy">
           <h1 className="heroTitle">
-            <strong>FDE Copilot</strong>
+            <strong>FDE Sidekick</strong>
           </h1>
           <p className="heroLine">
             Turn messy brainstorms into structured output while you speak.
@@ -735,7 +735,7 @@ export default function App() {
                   : "Press Record and start speaking. Artifacts will keep updating while you talk.")}
             </p>
             {liveAssistantPreview ? (
-              <p className="liveAssist">Copilot pulse: {liveAssistantPreview}</p>
+              <p className="liveAssist">Sidekick pulse: {liveAssistantPreview}</p>
             ) : null}
           </section>
 
@@ -863,7 +863,7 @@ export default function App() {
               key={`${message.role}-${index}`}
               className={`messageBubble ${message.role === "user" ? "messageUser" : "messageAssistant"}`}
             >
-              <p className="messageRole">{message.role === "user" ? "You" : "Copilot"}</p>
+              <p className="messageRole">{message.role === "user" ? "You" : "Sidekick"}</p>
               <p>{message.content}</p>
             </article>
           ))}
@@ -876,7 +876,7 @@ export default function App() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Optional: type extra direction for Copilot"
+            placeholder="Optional: type extra direction for Sidekick"
             disabled={isGenerating || isRecording}
           />
           <div className="composerActions">
