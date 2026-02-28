@@ -37,7 +37,8 @@ Speak your idea, then watch artifacts update continuously while recording.
 1. Clone and install:
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:1stprinciples/fde-sidekick.git
+# or: git clone https://github.com/1stprinciples/fde-sidekick.git
 cd fde-sidekick
 npm install
 ```
