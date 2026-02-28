@@ -1,10 +1,10 @@
-# FDE Copilot
+# Forward Deployed Engineer (FDE) Copilot
 
 **Turn messy brainstorms into structured plans while you speak.**
 
 FDE Copilot is a voice-first planning tool built for forward deployed engineers, hackathon teams, and anyone who thinks better out loud than in a text box. Press record, talk through your idea, and watch as three artifacts — a project summary, an architecture diagram, and a prioritized task list — assemble themselves in real time.
 
-https://github.com/1stprinciples/fde-sidekick/raw/main/assets/demo.mp4
+![FDE Copilot demo](assets/demo.gif)
 
 ## Why this exists
 
